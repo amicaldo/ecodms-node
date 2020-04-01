@@ -1,0 +1,19 @@
+{
+  "name": "ecodms-node",
+  "version": "1.0.0",
+  "description": "Abstraction for the ecoDMS 18.09 (apu) API",
+  "main": "./lib/ecodms.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Jannik Hauptvogel <hauptvogel@amicaldo.de>",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "form-data": "^3.0.0"
+  }
+}
