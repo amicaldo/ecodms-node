@@ -3,19 +3,10 @@ Abstraction for the ecoDMS 18.09 (apu) API.
 
 ## Documentation
 
-### `constructor(origin, port = 8180)`
+### `constructor(config)`
 
  * **Parameters:**
-   * `origin` — `string`
-   * `[port]` — `number`
-
-<hr />
-
-### `login(username, password)`
-
- * **Parameters:**
-   * `username` — `string`
-   * `password` — `string`
+   * `config` — `object`
 
 <hr />
 
@@ -206,13 +197,15 @@ Abstraction for the ecoDMS 18.09 (apu) API.
 ```javascript
 const EcoDms = require('ecodms-node');
 
-const api = new EcoDms('http://example-ecodms.com');
+const api = new EcoDms({
+    origin: 'http://example-ecodms.com',
+    username: 'user',
+    password: 'pass'
+});
 
 api.test()
   .then((res) => console.log('API works'))
   .catch((err) => console.log('API does not work'));
-
-api.login('username', 'password');
 
 // Do anything you want from here
 ```
