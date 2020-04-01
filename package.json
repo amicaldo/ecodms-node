@@ -1,6 +1,6 @@
 {
   "name": "ecodms-node",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "description": "Abstraction for the ecoDMS 18.09 (apu) API",
   "main": "./lib/ecodms.js",
   "directories": {
@@ -16,5 +16,9 @@
     "axios": "^0.19.2",
     "form-data": "^3.0.0",
     "yup": "^0.28.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/amicaldo/ecodms-node.git"
   }
 }
