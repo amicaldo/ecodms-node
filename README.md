@@ -7,6 +7,10 @@ Abstraction for the ecoDMS 18.09 (apu) API.
 
  * **Parameters:**
    * `config` — `object`
+        * `origin` – `string`
+        * `username` – `string`
+        * `password` – `string`
+        * `port` – `number|string` (optional, default: `8180`)
 
 <hr />
 
@@ -135,7 +139,7 @@ Abstraction for the ecoDMS 18.09 (apu) API.
 
  * **Parameters:**
    * `filepath` — `string`
-   * `[versionControlled]` — `boolean`
+   * `versionControlled` — `boolean` (optional, default: `false`)
  * **Returns:** `Promise<number>`
 
 <hr />
@@ -145,7 +149,7 @@ Abstraction for the ecoDMS 18.09 (apu) API.
  * **Parameters:**
    * `filepath` — `string`
    * `pdfpath` — `string`
-   * `[versionControlled]` — `boolean`
+   * `versionControlled` — `boolean` (optional, default: `false`)
  * **Returns:** `Promise<number>`
 
 <hr />
@@ -155,7 +159,7 @@ Abstraction for the ecoDMS 18.09 (apu) API.
  * **Parameters:**
    * `id` — `number|string`
    * `filepath` — `string`
-   * `[fixed]` — `boolean`
+   * `fixed` — `boolean` (optional, default: `false`)
  * **Returns:** `Promise<boolean>`
 
 <hr />
@@ -166,7 +170,7 @@ Abstraction for the ecoDMS 18.09 (apu) API.
    * `id` — `number|string`
    * `filepath` — `string`
    * `pdfpath` — `string`
-   * `[fixed]` — `boolean`
+   * `fixed` — `boolean` (optional, default: `false`)
  * **Returns:** `Promise<boolean>`
 
 <hr />
