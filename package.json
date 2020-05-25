@@ -15,7 +15,7 @@
   "dependencies": {
     "axios": "^0.19.2",
     "form-data": "^3.0.0",
-    "yup": "^0.28.3"
+    "yup": "^0.28.5"
   },
   "repository": {
     "type": "git",
