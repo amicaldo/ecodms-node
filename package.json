@@ -2,9 +2,9 @@
   "name": "ecodms-node",
   "version": "0.0.6",
   "description": "Abstraction for the ecoDMS 18.09 (apu) API",
-  "main": "./lib/ecodms.js",
+  "main": "./src/ecodms.js",
   "directories": {
-    "lib": "lib"
+    "src": "src"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

@@ -1,7 +1,7 @@
+const ecoDmsConfig = require('./ecodms-config.scheme');
+const FormData = require('form-data');
 const axios = require('axios');
 const fs = require('fs');
-const yup = require('yup');
-const FormData = require('form-data');
 
 
 class EcoDms {
@@ -9,15 +9,7 @@ class EcoDms {
    * @param {object} config
    */
   constructor(config) {
-    /** Validate config */
-    const configSchema = yup.object().shape({
-      origin: yup.string().url().required(),
-      port: yup.number().default(8180),
-      username: yup.string().required(),
-      password: yup.string().required()
-    });
-
-    config = configSchema.validateSync(config);
+    config = ecoDmsConfig.validateSync(config);
 
     this.__api = axios.create({
       baseURL: `${new URL(config.origin).origin}:${config.port}/api`,
@@ -34,10 +26,12 @@ class EcoDms {
 
 
 /**
- * @return {Promise<string>}
+ * @return {Promise<boolean>}
  */
 EcoDms.prototype.test = function() {
-  return this.__api.get('/test');
+  return this.__api.get('/test')
+    .then(() => true)
+    .catch(() => false);
 };
 
 
