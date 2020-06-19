@@ -231,6 +231,13 @@ EcoDms.prototype.uploadFile = function(filepath, versionControlled = false) {
 };
 
 
+EcoDms.prototype.classifyDocument = function(docID, docInfo) {
+  return this.__api.post('/classifyDocument', docInfo, {
+    params: { docID: docID }
+  });
+};
+
+
 /**
  * @param {string} filepath
  * @param {string} pdfpath
