@@ -86,35 +86,19 @@ EcoDms.prototype.getFolderById = function(id) {
 
 
 /**
- * @return {object[]}
- */
-EcoDms.prototype.getDocuments = function() {
-  return this.__api.post('/searchDocuments', [{
-    'classifyAttribut': 'docid',
-    'searchOperator': '>',
-    'searchValue': '0'
-  }]);
-};
-
-
-/**
- * @param {string} name
+ * @param {object[]} searchFilterList
  *
- * @return {object[]}
+ * @return {Promise<object[]>}
  */
-EcoDms.prototype.searchDocumentsByName = function(name) {
-  return this.__api.post('/searchDocuments', [{
-    'classifyAttribut': 'bemerkung',
-    'searchOperator': 'ilike',
-    'searchValue': name
-  }]);
+EcoDms.prototype.searchDocuments = function(searchFilterList) {
+  return this.__api.post('/searchDocuments', searchFilterList);
 };
 
 
 /**
  * @param {number|string} id
  *
- * @return {Promise<string>}
+ * @return {Promise<object>}
  */
 EcoDms.prototype.getDocumentById = function(id) {
   return this.__api.get(`/document/${id}`);
@@ -231,6 +215,12 @@ EcoDms.prototype.uploadFile = function(filepath, versionControlled = false) {
 };
 
 
+/**
+ * @param {number|string} docID
+ * @param {object} docInfo
+ *
+ * @return {Promise<number>}
+ */
 EcoDms.prototype.classifyDocument = function(docID, docInfo) {
   return this.__api.post('/classifyDocument', docInfo, {
     params: { docID: docID }
