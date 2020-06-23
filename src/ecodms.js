@@ -29,7 +29,7 @@ class EcoDms {
  * @return {Promise<boolean>}
  */
 EcoDms.prototype.test = function() {
-  return this.__api.get('/test')
+  return this.__api.get('/status')
     .then(() => true)
     .catch(() => false);
 };
