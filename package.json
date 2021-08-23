@@ -1,6 +1,6 @@
 {
   "name": "ecodms-node",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "Abstraction for the ecoDMS 18.09 (apu) API",
   "main": "./src/ecodms.js",
   "directories": {
