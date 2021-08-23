@@ -1,6 +1,7 @@
 const ecoDmsConfig = require('./ecodms-config.scheme');
 const FormData = require('form-data');
 const axios = require('axios');
+const https = require('https');
 const fs = require('fs');
 
 
@@ -16,7 +17,8 @@ class EcoDms {
       auth: {
         username: config.username,
         password: config.password
-      }
+      },
+      httpsAgent: new https.Agent({ rejectUnauthorized: false })
     });
 
     /** Middleware to extract data from successful request */
